@@ -43,5 +43,8 @@ Mail::to('damiljamil63@gmail.com')
 });
 Route::get('/mail_form', [mailController::class, 'open_form' ])
 ->name('mail_form');
+Route::post('/send_mail', [mailController::class, 'send_mail'])
+->name('send_mail');
+
 
 // Route::put('/create/{student}', [StudentController::class , 'update'])->name('student.update');
