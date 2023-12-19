@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\FileController;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\mailController;
+use App\Mail\form_mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +32,16 @@ Route::post('/file_upload', [FileController::class, 'store_file'])->name('store_
 Route::get('/show_data', [FileController::class, 'show_file_data']);
 Route::get('/view_file/{id}', [FileController::class, 'file_view'])->name('view_file');
 Route::get('/download_file/{file}', [FileController::class,'file_download'])->name('file_download');
+
+
+//Email
+
+
+Route::get('/send_mail', function(){
+Mail::to('damiljamil63@gmail.com')
+->send(new form_mail());
+});
+Route::get('/mail_form', [mailController::class, 'open_form' ])
+->name('mail_form');
+
 // Route::put('/create/{student}', [StudentController::class , 'update'])->name('student.update');
