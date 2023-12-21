@@ -7,7 +7,7 @@
 <p>{{$details['body']}}</p>
 <br>
 <p>Regards:<br>
-Labour Lobby PVT (LTD)
+Damil Jamil
 </p>
 </body>
 </html>

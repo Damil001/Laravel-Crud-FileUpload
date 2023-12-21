@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\form_mail;
+
 
 class mailController extends Controller
 {
@@ -36,8 +39,7 @@ public function send_mail(Request $req){
     }
     else{
     Mail::to($emails['email'])->cc($emails['cc'])->bcc($emails['bcc'])->send(new form_mail($details));
-    return redirect('mail_form')->with('status', "Email Sent
-    Successfully!");
+    return redirect()->route('mail_form')->with('success', 'Email sent successfully!');
     }
     }
     }

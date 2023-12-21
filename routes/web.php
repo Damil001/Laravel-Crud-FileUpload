@@ -35,16 +35,17 @@ Route::get('/download_file/{file}', [FileController::class,'file_download'])->na
 
 
 //Email
-
-
-Route::get('/send_mail', function(){
-Mail::to('damiljamil63@gmail.com')
-->send(new form_mail());
-});
 Route::get('/mail_form', [mailController::class, 'open_form' ])
 ->name('mail_form');
 Route::post('/send_mail', [mailController::class, 'send_mail'])
 ->name('send_mail');
+
+
+// Route::get('/send_mail', function(){
+// Mail::to('damiljamil63@gmail.com')
+// ->send(new form_mail());
+// });
+
 
 
 // Route::put('/create/{student}', [StudentController::class , 'update'])->name('student.update');
